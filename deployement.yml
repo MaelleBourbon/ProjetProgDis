@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: filmsservice
+    version: "1.0"
+  name: filmsservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: filmsservice
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: filmsservice
+    spec:
+      containers:
+        - name: filmsservice
+          image: maelle184/films:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080  # Assurez-vous que le port d'écoute est le bon
+          resources: {}
+      restartPolicy: Always
+status: {}
+
