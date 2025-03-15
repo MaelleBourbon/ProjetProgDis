@@ -23,7 +23,13 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          resources: {}
+          resources: 
+            requests:
+              memory: "512Mi"   # Mémoire minimale allouée
+              cpu: "500m"       # CPU minimal alloué (500m = 0.5 CPU)
+            limits:
+              memory: "1Gi"     # Mémoire maximale allouée
+              cpu: "1"
       restartPolicy: Always
 status: {}
 
