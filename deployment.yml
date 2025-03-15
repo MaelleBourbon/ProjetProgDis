@@ -27,6 +27,7 @@ spec:
       restartPolicy: Always
 status: {}
 
+
 ---
 apiVersion: v1
 kind: Service
@@ -82,4 +83,3 @@ spec:
             port:
               number: 80
             host: filmsservice.default.svc.cluster.local 
-
